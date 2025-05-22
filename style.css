@@ -7,6 +7,16 @@
   --footer-text: #fff;
 }
 
+.botao-curriculo {
+  padding: 8px 16px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+
+
 body.dark-mode {
   --bg-color: #121212;
   --text-color: #f1f1f1;
@@ -14,6 +24,13 @@ body.dark-mode {
   --header-text: #ffffff;
   --footer-bg: #1e1e1e;
   --footer-text: #cccccc;
+}
+
+.titulo-centralizado {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #272e55;
 }
 
 * {
