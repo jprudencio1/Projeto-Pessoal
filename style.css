@@ -91,7 +91,6 @@ nav button:hover {
   background-color: #ffffff55;
 }
 
-
 nav a {
   color: var(--header-text);
   text-decoration: none;
@@ -119,10 +118,58 @@ section {
   margin: 0 auto;
 }
 
+#contato img {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+}
+
 footer {
-  background-color: #27949d;
+  background-color: #61d2dc;
   color: black;
   text-align: center;
   padding: 15px 0;
   margin-top: 30px;
+}
+
+footer strong, footer b {
+  color: black;
+}
+
+body.dark-mode footer {
+  color: white;
+}
+
+body.dark-mode footer strong,
+body.dark-mode footer b {
+  color: white;
+}
+
+.icones-contato {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.icones-contato a {
+  text-decoration: none;
+  color:#1e1e1e;
+  text-align: center;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.icones-contato a:hover {
+  transform: scale(1.1);
+  color: #0077cc;
+}
+
+.icones-contato img {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: 0 auto 5px;
 }
