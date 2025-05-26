@@ -7,15 +7,22 @@
   --footer-text: #fff;
 }
 
-.botao-curriculo {
-  padding: 8px 16px;
+body.dark-mode #contato a {
   color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s;
+  transition: color 0.3s;
 }
 
+body.dark-mode #contato a:hover {
+  color: #ccc;
+}
 
+body.dark-mode .titulo-centralizado {
+  color: white;
+}
+
+body.dark-mode footer {
+  color: white;
+}
 
 body.dark-mode {
   --bg-color: #121212;
@@ -56,10 +63,10 @@ header {
 
 nav ul {
   list-style: none;
-  margin-top: 10px;
+  margin-top: 5px;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 nav {
@@ -107,7 +114,7 @@ nav button:hover {
 }
 
 section {
-  padding: 40px 20px;
+  padding: 10px 20px;
   max-width: 800px;
   margin: 0 auto;
 }
