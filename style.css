@@ -3,8 +3,21 @@
   --text-color: #333;
   --header-bg: #0077cc;
   --header-text: #fff;
-  --footer-bg: #222;
-  --footer-text: #fff;
+  --footer-bg: #61d2dc;   
+  --footer-text: #000000;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+  --header-bg: #1e1e1e;
+  --header-text: #ffffff;
+  --footer-bg: #1e1e1e;    /* Fundo escuro no modo escuro */
 }
 
 body.dark-mode #contato a {
@@ -47,15 +60,28 @@ body.dark-mode {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.2;
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
 
+body.dark-mode nav ul li a {
+  background-color: #333333; /* fundo escuro */
+  color: #f1f1f1; /* texto claro */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+}
+
+body.dark-mode nav ul li a:hover {
+  background-color: #555555; /* tom um pouco mais claro no hover */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
+
+
 header {
-  background-color: #272e55;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  background-color: var(--header-bg);
   color: var(--header-text);
   padding: 20px 0;
   text-align: center;
@@ -74,6 +100,7 @@ nav {
 }
 
 nav button {
+  transition: background-color 0.3s, transform 0.2s;
   position: absolute;
   right: 20px;
   top: 0;
@@ -87,6 +114,10 @@ nav button {
   transition: background-color 0.3s;
 }
 
+nav button:active {
+  transform: scale(0.95);
+}
+
 nav button:hover {
   background-color: #ffffff55;
 }
@@ -95,6 +126,21 @@ nav a {
   color: var(--header-text);
   text-decoration: none;
   font-weight: bold;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #005fa3; /* cor de fundo do botão */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #004080;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 nav button {
@@ -118,6 +164,30 @@ section {
   margin: 0 auto;
 }
 
+#habilidades ul {
+  list-style: none;
+  padding-left: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#habilidades ul li {
+  background-color: #e0e7ff;
+  color: #272e55;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+body.dark-mode #habilidades ul li {
+  background-color: #333a56;
+  color: #f1f1f1;
+}
+
 #contato img {
   width: 50px;
   height: auto;
@@ -125,26 +195,48 @@ section {
   margin: 10px 0;
 }
 
+#btn-topo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+#btn-topo.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#btn-topo:hover {
+  background-color: #005fa3; /* tom mais escuro do header */
+}
+
+
 footer {
-  background-color: #61d2dc;
-  color: black;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
   text-align: center;
   padding: 15px 0;
   margin-top: 30px;
 }
 
-footer strong, footer b {
-  color: black;
+footer strong,
+footer b {
+  color: var(--footer-text);
 }
 
-body.dark-mode footer {
-  color: white;
-}
-
-body.dark-mode footer strong,
-body.dark-mode footer b {
-  color: white;
-}
 
 .icones-contato {
   display: flex;
@@ -156,6 +248,7 @@ body.dark-mode footer b {
 }
 
 .icones-contato a {
+  cursor: pointer;
   text-decoration: none;
   color:#1e1e1e;
   text-align: center;
@@ -172,4 +265,36 @@ body.dark-mode footer b {
   height: auto;
   display: block;
   margin: 0 auto 5px;
+}
+
+/* Responsividade para telas até 600px de largura */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;  
+    gap: 10px;
+    padding: 0;
+  }
+
+  nav ul li {
+    text-align: center;
+  }
+
+  nav button {
+    position: static; 
+    margin: 10px auto 0 auto;
+    display: block;
+  }
+
+  section {
+    padding: 15px 10px;
+    max-width: 100%;
+  }
+
+  .icones-contato {
+    gap: 20px;
+  }
+
+  #contato img, .icones-contato img {
+    width: 40px;  
+  }
 }

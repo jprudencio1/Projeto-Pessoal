@@ -2,10 +2,15 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Site Pessoal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css"/>
 </head>
+<button id="btn-topo" title="Voltar ao topo">⬆️</button>
 <body>
   <header>
     <h1>João Vyctor Prudêncio Vieira Lima</h1>
@@ -16,7 +21,7 @@
           <a href="curriculo_joao.pdf" download target="_blank">Currículo</a>
         </li>
       </ul>
-      <button id="toggle-theme">🌙 Modo Escuro</button>
+      <button id="toggle-theme" aria-label="Aternar tema">🌙 Modo Escuro</button>
     </nav>
   </header>
    <section>
@@ -47,6 +52,18 @@
     </ul>
   </section>
 
+  <section id="habilidades">
+  <h2>Habilidades</h2>
+  <ul>
+    <li>💻 Programação em Python, Java e JavaScript</li>
+    <li>📊 Análise de dados com Pandas e NumPy</li>
+    <li>🌐 Desenvolvimento web com HTML, CSS e Flask</li>
+    <li>🔧 Controle de versões com Git e GitHub</li>
+    <li>📈 Criação de dashboards interativos</li>
+  </ul>
+</section>
+
+
   <section id="projetos">
     <h2>Projetos</h2>
     <ul>
@@ -60,14 +77,14 @@
     <h2>Contatos</h2>
   <div class="icones-contato">
     <a href="https://github.com/jprudencio1"target="_blank">
-        <img src="imagens/logo-github.png" alt="GitHub">
+        <img src="imagens/logo-github.png" alt="Acesse meu GitHub">
       <span>GitHub</span>
     </a>
     <a href="https://www.linkedin.com/in/jo%C3%A3o-vyctor-prud%C3%AAncio-vieira-lima-b9a2a8290/"target="_blank">
       <img src="imagens/logo-linkedin.png" alt="LinkedIn">
       <span>LinkedIn</span>
     </a>
-    <a href="mailto:jprudenciovieiralima@gmail.com" target_blank>
+    <a href="mailto:jprudenciovieiralima@gmail.com" target="_blank">
       <img src="imagens/logo-gmail.jpeg" alt="E-mail">
       <span>E-mail</span>
     </a>
@@ -75,7 +92,7 @@
   </section>
 
   <footer>
-    <p>&copy; <strong>2025 João Vyctor.Todos os direitos reservados.</strong></p>
+    <p>&copy; <strong>2025 João Vyctor. Todos os direitos reservados.</strong></p>
   </footer>
 
   <script src="script.js"></script>

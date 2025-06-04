@@ -13,3 +13,21 @@ toggleButton.addEventListener("click", () => {
   toggleButton.textContent = isDark ? "☀️ Modo Claro" : "🌙 Modo Escuro";
   localStorage.setItem("theme", isDark ? "dark" : "light");
 });
+
+const btnTopo = document.getElementById('btn-topo');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    btnTopo.classList.add('show');
+  } else {
+    btnTopo.classList.remove('show');
+  }
+});
+
+btnTopo.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
